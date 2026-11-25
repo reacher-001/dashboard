@@ -1,8 +1,20 @@
+/*color declarations*/
+:root{
+    --canvas-color: #E2E8F0;
+    --widget-color:#1E293B;
+    --dashboard-color:#1992D4;
+    --navbar-color:#FFFFFF;
+    --search-color:#E2E8F0;
+    --text-primary:#0F172A;
+    --text-muted:#64748B;
+}
 /*CSS reset*/
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--text-primary);
 }
 *,::before,::after{
     margin: 0;
@@ -13,7 +25,64 @@ ul,ol{
 a{
     text-decoration: none;
 }
-.dashboard>h1{
+/*Main container*/
+.main-container{
+    display: grid;
+    grid-template:1fr 5fr/1.3fr 5fr;
+    min-height: 100dvh;
+}
+/*Dashboard*/
+.dashboard{
+    grid-row:1/-1;
+    background-color: var(--dashboard-color);
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,0.4);
+}
+/*Navigation bar*/
+.nav-bar{
+    background-color: var(--navbar-color);
+    grid-row: 1/2;
+    grid-column: 2/3;
+}
+.nav-bar-top{
+    display: flex;
+    justify-content: space-between;
+}
+.nav-bar-links>h2{
+    display: inline;
+}
+.nav-bar-bottom{
+    display: flex;
+    justify-content: space-between;
+}
+.profile-info{
+    display: flex;
+}
+.nav-bar-icon{
+    width: 24px;
+    height: 24px;
+}
+/*Main cards area*/
+.card-container{
+    background-color: var(--canvas-color);
+    display: grid;
+    grid-template:1fr 1fr/5fr 1.5fr;
+}
+.your-projects{
+    grid-row: 1/-1;
+    display: flex;
+    flex-direction: column;
+}
+.project-cards{
+    display: grid;
+    grid-template-rows: repeat(3,3fr);
+    grid-template-columns: repeat(2,1fr);
+    gap: 8px;
+}
+#profile-image{
+    height: 48px;
+    width: auto;
+}
+.dashboard-logo>h1{
     display: inline;
 }
 svg.left-panel-icon{
