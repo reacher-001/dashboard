@@ -8,7 +8,7 @@
     --text-primary:#0F172A;
     --text-sidebar:#fff;
     --text-muted:#64748B;
-    --shadow-card: 0px 4px 6px -1px rgba(15,23,42,0.1);
+    --shadow-card: 0px 4px 6px -1px rgba(15,23,42,0.3);
 }
 /*CSS reset*/
 *,::before, ::after{
@@ -63,6 +63,10 @@ a:visited{
 #dashboard-icon{
     height: 48px;
     width: 48px;
+}
+svg.left-panel-icon{
+    height: 24px;
+    width: 24px;
 }
 /*Navigation bar*/
 .nav-bar{
@@ -134,20 +138,94 @@ input[type="search"]{
     background-color: var(--canvas-color);
     display: grid;
     grid-template:1fr 1fr/5fr 1.5fr;
+    padding: 2rem 1.5rem; 
+    column-gap: 1.5rem;
 }
 .your-projects{
     grid-row: 1/-1;
     display: flex;
     flex-direction: column;
 }
+.your-projects>h3{
+    margin-bottom: 1rem;
+}
 .project-cards{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-auto-rows: 1fr;
-    gap: 8px;
+    gap: 1rem;
 }
-
-svg.left-panel-icon{
+.card{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border-width: 0;
+    background-color: white;
+    border-left-width: 8px;
+    border-left-color: rgb(255, 230, 1);
+    border-left-style: solid;
+    padding: 1.5rem 1.5rem;
+    box-shadow: var(--shadow-card);
+}
+.card>h4{
+    font-size: 1.15rem;
+    font-weight: 900;
+}
+.card>p{
+    margin-bottom: 1rem;
+}
+.card-icon-container{
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+.card-icon{
     height: 24px;
-    width: 24px;
+    width: auto;
+}
+.announcement-card>h3{
+    margin-bottom: 1rem;
+}
+.announcement-card-content{
+    background-color: #fff;
+    border-radius: 10px;
+    border-width: 0;
+    padding:0.5rem 2rem;
+    box-shadow: var(--shadow-card);
+}
+.announcement-card-item{
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+}
+.announcement-card-item:not(:last-child){
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+.trending-card{
+    padding-top: 2rem;
+}
+.trending-card>h3{
+    padding-bottom: 1rem;
+}
+.trending-card-content{
+    background-color: #fff;
+    border-radius: 10px;
+    border-width: 0;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: var(--shadow-card);
+}
+.trending-card-item{
+    display: grid;
+    grid-template:1fr/0.5fr 2fr;
+}
+.trending-card-item>svg{
+    place-self: center;
+}
+.trending-card-text>p{
+    color: var(--text-muted);
+}
+.trending-card-text{
+    margin-left: 0.5rem;
 }
